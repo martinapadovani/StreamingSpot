@@ -1,0 +1,56 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 15% 85%;
+}
+
+main .filtros {
+
+    grid-row: 2;
+    grid-column: 1 / 2;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    margin: 1rem 15rem 4rem 1rem ; 
+    padding: 1rem;  
+    background-color: #D9D9D9;
+
+    border-radius: 1rem;
+
+}
+
+main  .filtros h2,
+main  .filtros h3 {
+
+    margin: 1rem -10rem 1rem 1rem; 
+    color: #393d3ce7;
+}
+
+main  .filtros h3 {
+    font-weight: 500;
+}
+
+main  .filtros button{
+
+    all: unset;
+
+    margin: 1rem 1rem 1rem 8rem;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+    background-color: #303433;
+    color: #ffffff;
+}
+
+main input {
+
+    grid-row: 1;
+    grid-column: 3 / 4;
+
+    background-color: #D9D9D9;
+
+    border-radius: 1rem;
+
+    margin: 2rem 8rem;
+    padding: 0.5rem; 
+}

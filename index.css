@@ -1,0 +1,110 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  * { 
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  } 
+  
+  /*BODY*/
+  
+  body{
+    background-color: #788C85;
+  }
+  
+  /*HEADER*/
+  
+  header {
+    display: flex;
+    justify-content:space-evenly;
+    width: 100vmax;
+    background-color: #84CBB1;
+    color: #ffff;
+  }
+  
+  header h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  header nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 55vmax;
+    margin: 1rem 0rem;
+  
+  } 
+  
+  header nav ul li {
+    list-style: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    color: #ffff;
+  }
+  
+  /*MAIN*/
+  
+  main {
+    background-color: #788C85;
+  }
+  
+  main h2 {
+  
+    color: #303433;
+    font-size: 1.8rem;
+  }
+  
+  main .main-content {
+    color: #ffffff;
+  }
+  
+  main .main-content h2 {
+    width: 100vw;
+    text-align: center;
+    margin: 1rem;
+  }
+  
+  main .main-content p {
+  
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    width: 80vw;
+    text-align: center;
+  
+  }
+  
+  main .tendencias h3{
+    color: #303433;
+    font-size: 1.5rem;
+  }
+  
+  main .tendencias #presentacion-tendencias{
+    text-align: center;
+  }
+  /*FOOTER*/
+  
+  footer{
+    background-color: #303433;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
