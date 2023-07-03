@@ -10,7 +10,7 @@ let usuarioAInscribirse = {user:"", email:"", password: ""}
 formulario.addEventListener("submit", (e) =>{
     e.preventDefault
 
-usuarioAInscribirse = {
+ usuarioAInscribirse = {
     ...usuarioAInscribirse,
     user: inputUser.value,
     email: inputEmail.value,
