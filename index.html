@@ -18,21 +18,48 @@
       <nav>
         <ul>
           <li><a href="index.html"><img src="s (3).png" alt="" class="logo"></a></li>
-  
+        </ul>
+        <ul>
           <li><a href="/explorer.html">Explorer</a></li>
-  
+        </ul>
+        <ul>
           <li><a href="/nosotros.html">Sobre nosotros:</a></li>
         </ul>
+          
+  
+          
+
       </nav>
 
     </header>
 
    <main>
 
-      <section class="tendencias">
-        <h3 id="presentacion-tendencias">En Streaming Spot, nos preocupamos por mantenerte actualizado. Mantén un ojo a nuestras novedades</h3>
-        <h3 id="titulo-tendencias">TENDENCIAS</h3>
-      </section>
+    <section id="populares" >
+
+      <h2>Populares</h2>
+
+      <div id="contenedor-peliculas-populares" class="contenedor"></div>
+
+      <div class="paginacion">
+          <button id="btnAnteriorPopulares">Anterior</button>
+          <button id="btnSiguientePopulares">Siguiente</button>
+      </div>
+
+  </section>
+
+  <section id="cartelera" >
+
+      <h2>En cartelera hoy</h2>
+
+      <div id="contenedor-peliculas-cartelera" class="contenedor"></div>
+
+      <div class="paginacion">
+          <button id="btnAnteriorCartelera">Anterior</button>
+          <button id="btnSiguienteCartelera">Siguiente</button>
+      </div>
+
+  </section>
 
     </main>
 
@@ -48,5 +75,6 @@
 
 
     <script type="module" src="/main.js"></script>
+    <script src="explorer.js"></script>
   </body>
 </html>

@@ -57,25 +57,3 @@ main input {
 
 /*CONTENEDOR*/
 
-.contenedor {
-	width: 100%;
-	max-width: max-content;
-
-	display: flex;
-	justify-content:space-evenly
-}
-
-.contenedor .pelicula {
-	text-align: center;
-}
-
-.contenedor .pelicula .titulo {
-	font-size: 16px;
-	font-weight: 600;
-}
-
-.contenedor .pelicula .poster {
-	width: 100%;
-	margin-bottom: 10px;
-	border-radius: 15px;
-}

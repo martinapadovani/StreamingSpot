@@ -23,37 +23,8 @@
     background-color: #788C85;
   }
   
-  /*HEADER*/
+ 
   
-  header {
-    height: 15vh;
-    width: 100vmax;
-    background-color: #84CBB1;
-    color: #ffff;
-  }
-  
-  
-  
-  header nav ul{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    width: 55vmax;
-    margin: 1rem 0rem;
-  
-  } 
-  
-  header nav ul li {
-    list-style: none;
-    font-weight: 600;
-    font-size: 1.5rem;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    color: #ffff;
-  }
   
   /*MAIN*/
   
@@ -96,6 +67,30 @@
   main .tendencias #presentacion-tendencias{
     text-align: center;
   }
+    /*CONTENEDOR*/
+    .contenedor {
+      width: 100%;
+      max-width: max-content;
+    
+      display: flex;
+      justify-content:space-evenly;
+    }
+    
+    .contenedor .pelicula {
+      text-align: center;
+      list-style: none;
+    }
+    
+    .contenedor .pelicula .titulo {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .contenedor .pelicula .poster {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 15px;
+    }S
   /*FOOTER*/
   
   footer{
