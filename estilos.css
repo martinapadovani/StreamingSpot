@@ -26,37 +26,39 @@ body{
 /*HEADER*/
 
 header {
-  display: flex;
-  justify-content:space-evenly;
   height: 15vh;
   width: 100vmax;
   background-color: #84CBB1;
-  color: #ffff;
+  color: #fff;
 }
 
-header .logo{
+header .logo {
   width: 60px;
   border-radius: 60px;
 }
 
-header nav ul{
+header nav {
   display: flex;
   justify-content: space-between;
-  width: 55vmax;
-  margin: 1rem 0rem;
+  align-items: center; 
+}
 
-} 
+header nav ul {
+  display: flex; 
+  margin: 10px ; 
+  padding: 0; 
+  list-style: none;
+}
 
 header nav ul li {
-  list-style: none;
+  margin: 10px; 
   font-weight: 600;
   font-size: 1.5rem;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: black;
-  color: #ffff;
+  color: #fff; 
 }
 
 /*MAIN*/
