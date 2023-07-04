@@ -28,6 +28,7 @@ body{
 header {
   display: flex;
   justify-content:space-evenly;
+  height: 15vh;
   width: 100vmax;
   background-color: #84CBB1;
   color: #ffff;

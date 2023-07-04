@@ -26,22 +26,18 @@
   /*HEADER*/
   
   header {
-    display: flex;
-    justify-content:space-evenly;
+    height: 15vh;
     width: 100vmax;
     background-color: #84CBB1;
     color: #ffff;
   }
   
-  header h1 {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
+  
   
   header nav ul{
     display: flex;
     justify-content: space-between;
+    text-align: center;
     width: 55vmax;
     margin: 1rem 0rem;
   
