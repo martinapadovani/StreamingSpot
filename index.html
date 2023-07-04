@@ -10,10 +10,7 @@
   </head>
   <body>
 
-
     <header>
-
-      
 
       <nav>
         <ul>
@@ -26,27 +23,52 @@
       </nav>
 
     </header>
+    
+    <main>
 
-   <main>
+      <h3 id="presentacion-tendencias">En Streaming Spot, nos preocupamos por mantenerte actualizado. Mantén un ojo a nuestras novedades</h3>
 
-      <section class="tendencias">
-        <h3 id="presentacion-tendencias">En Streaming Spot, nos preocupamos por mantenerte actualizado. Mantén un ojo a nuestras novedades</h3>
-        <h3 id="titulo-tendencias">TENDENCIAS</h3>
+      <section id="populares" >
+
+        <h2>Populares</h2>
+
+        <div id="contenedor-peliculas-populares" class="contenedor"></div>
+
+        <div class="paginacion">
+            <button id="btnAnteriorPopulares">Anterior</button>
+            <button id="btnSiguientePopulares">Siguiente</button>
+        </div>
       </section>
+
+      <section id="cartelera" >
+
+        <h2>En cartelera hoy</h2>
+
+        <div id="contenedor-peliculas-cartelera" class="contenedor"></div>
+
+        <div class="paginacion">
+            <button id="btnAnteriorCartelera">Anterior</button>
+            <button id="btnSiguienteCartelera">Siguiente</button>
+        </div>
+
+      </section>
+
+      <section id="proximamente" >
+
+        <h2>Proximamente</h2>
+
+        <div id="contenedor-peliculas-proximamente" class="contenedor"></div>
+
+        <div class="paginacion">
+          <button id="btnAnteriorProximamente">Anterior</button>
+          <button id="btnSiguienteProximamente">Siguiente</button>
+        </div>
+
+       </section>
 
     </main>
 
 
-
-    <footer>
-
-      <h2>FOOTER</h2>
-
-    </footer>
-
-
-
-
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/index.js"></script>
   </body>
 </html>

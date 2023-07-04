@@ -1,24 +1,16 @@
+// ELEMENTOS EXPLORER
 
-let pagina = 1;
 const apiKey = 'ffe9e3e0742db9df0c671e43f4b9316c';
+const contenedorPeliculas = document.getElementById("contenedor-peliculas")
 
 
-//Elementos contenedor POPULARES
-const btnAnteriorPopulares = document.getElementById('btnAnteriorPopulares');
-const btnSiguientePopulares = document.getElementById('btnSiguientePopulares');
-const contenedorPopulares = document.getElementById("contenedor-peliculas-populares")
-let urlPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-MX&page=${pagina}`
+// PELICULAS X DEFECTO
+
+//Elementos 
+let urlPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-MX&page=1`
 
 
-//Elementos contenedor CARTELERA
-
-const btnAnteriorCartelera = document.getElementById('btnAnteriorCartelera');
-const btnSiguienteCartelera = document.getElementById('btnSiguienteCartelera');
-const contenedorCartelera = document.getElementById("contenedor-peliculas-cartelera")
-let urlCartelera = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=es-MX&page=${pagina}`
-
-
-//CONSUMIR LISTAS
+//Consumir lista
 
 async function obtenerPeliculas(url){
 
@@ -31,7 +23,7 @@ async function obtenerPeliculas(url){
     return respuesta
 }
 
-async function mostrarPeliculas(url, contenedor){
+async function mostrarPeliculas(url){
 
     const respuesta = await obtenerPeliculas(url)
 
@@ -47,53 +39,83 @@ async function mostrarPeliculas(url, contenedor){
 		`;
     })
 
-    contenedor.innerHTML = html
+    contenedorPeliculas.innerHTML = html
 
-   // console.log(respuesta.page)
-
+   console.log(respuesta.page)
 }
+
+//Ejecucion
+obtenerPeliculas(urlPopulares)
+mostrarPeliculas(urlPopulares)
 
 //Funciones para cambiar pagina
 
-async function paginaSiguiente(url, contenedor){
+//Elementos
+const btnAnteriorPopulares = document.getElementById('btnAnteriorPopulares');
+const btnSiguientePopulares = document.getElementById('btnSiguientePopulares');
+
+async function paginaSiguiente(url){
+
+    let pagina = 1
 
     if(pagina < 1000){
         pagina ++;
         url = `${url}&page=${pagina}`
-        await obtenerPeliculas(url);
-        await mostrarPeliculas(url, contenedor);
         console.log(pagina)
         console.log(url)
-    }
 
+        await obtenerPeliculas(url);
+        await mostrarPeliculas(url);
+    }
 }
 
-async function paginaAnterior(url, contenedor) {
+async function paginaAnterior(url) {
 
     if(pagina > 1){
         pagina -= 1;
         url = `${url}&page=${pagina}`
         await obtenerPeliculas(url);
-        await mostrarPeliculas(url, contenedor);
+        await mostrarPeliculas(url);
     }
 }
 
-//PELICULAS POPULARES
 
-obtenerPeliculas(urlPopulares)
-mostrarPeliculas(urlPopulares, contenedorPopulares)
-btnAnteriorPopulares.addEventListener("click",() => paginaAnterior(urlPopulares, contenedorPopulares))
-btnSiguientePopulares.addEventListener("click",() => paginaSiguiente(urlPopulares, contenedorPopulares))
+//btnAnteriorPopulares.addEventListener("click", () => console.log("funciono"))
 
+btnAnteriorPopulares.addEventListener("click", async () => paginaAnterior(urlPopulares))
+btnSiguientePopulares.addEventListener("click", async() => paginaSiguiente(urlPopulares))
 
-//PELICULAS CARTELERA
+////////////////////////////////////////////////////////////////////////
 
-obtenerPeliculas(urlCartelera)
-mostrarPeliculas(urlCartelera, contenedorCartelera)
-btnAnteriorCartelera.addEventListener("click",() => paginaAnterior(urlCartelera, contenedorCartelera))
-btnSiguienteCartelera.addEventListener("click",() => paginaSiguiente(urlCartelera, contenedorCartelera))
+//BARRA DE BÚSQUEDA
 
+//Elementos
 
+const input = document.getElementById("inputDeBusqueda")
+const btnBuscar = document.getElementById("botonBuscar")
 
+let query;
+let urlSearchMovie = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}&include_adult=false&language=en-US&page=1`
+
+//Funcion
+
+btnBuscar.addEventListener("click", async ()  => {
+
+    if(input.value){
+        urlSearchMovie = `https://api.themoviedb.org/3/search/movie?query=${input.value}&api_key=${apiKey}&include_adult=false&language=en-US&page=1`
+        console.log(input.value)
+        console.log(urlSearchMovie)
+        
+    }
+
+    await obtenerPeliculas(urlSearchMovie)
+    await mostrarPeliculas(urlSearchMovie)
+})
+
+//Ejecucion
+
+////////////////////////////////////
+
+// //BTN CAMBIAR PAGINA
 
 
