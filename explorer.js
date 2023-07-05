@@ -34,7 +34,7 @@ async function mostrarPeliculas(url){
         html += `
 			<div class="pelicula">
             <li><a href="detalles.html"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a></li>
-			<h3 class="titulo">${pelicula.title}</h3>
+			
 			</div>
 		`;
     })
