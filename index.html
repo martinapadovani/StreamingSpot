@@ -9,9 +9,7 @@
     <title>Inicio</title>
   </head>
   <body>
-
     <header>
-
       <nav>
         <ul>
           <li><a href="index.html"><img src="s (3).png" alt="" class="logo"></a></li>
@@ -20,29 +18,28 @@
           <li><a href="/explorer.html">Explorer</a></li>
         </ul>
         <ul>
-          <li><a href="/nosotros.html">Sobre nosotros:</a></li>
+          <li><a href="/nosotros.html">Sobre nosotros</a></li>
         </ul>
-          
-  
-          
-
       </nav>
-
-    </header>
+</header>
     
     <main>
-
       <h2 id="presentacion-tendencias">En Streaming Spot, nos preocupamos por mantenerte actualizado. Mantén un ojo a nuestras novedades</h2>
 
       <section id="populares" >
 
         <h3>Populares</h3>
-
-        <div id="contenedor-peliculas-populares" class="contenedor"></div>
-
         <div class="paginacion">
-            <button id="btnAnteriorPopulares">Anterior</button>
-            <button id="btnSiguientePopulares">Siguiente</button>
+          <div><button id="btnAnteriorPopulares" class="btnAnterior">
+            <ion-icon name="caret-back-outline"></ion-icon>
+        </button></div>
+            
+          <div id="contenedor-peliculas-populares" class="contenedor"></div>
+          
+          <div><button id="btnSiguientePopulares" class="btnSiguiente">
+            <ion-icon name="caret-forward-outline" ></ion-icon>
+          </svg></button></div>
+            
         </div>
       </section>
 
@@ -50,11 +47,18 @@
 
         <h3>En cartelera hoy</h3>
 
-        <div id="contenedor-peliculas-cartelera" class="contenedor"></div>
+        
 
         <div class="paginacion">
-            <button id="btnAnteriorCartelera">Anterior</button>
-            <button id="btnSiguienteCartelera">Siguiente</button>
+            <button id="btnAnteriorCartelera" class="btnAnterior">
+              <ion-icon name="caret-back-outline"></ion-icon>
+            </button>
+
+            <div id="contenedor-peliculas-cartelera" class="contenedor"></div>
+
+            <button id="btnSiguienteCartelera" class="btnSiguiente">
+              <ion-icon name="caret-forward-outline" ></ion-icon>
+            </button>
         </div>
 
       </section>
@@ -63,18 +67,23 @@
  
         <h3>Proximamente</h3>
 
-        <div id="contenedor-peliculas-proximamente" class="contenedor"></div>
-
         <div class="paginacion">
-          <button id="btnAnteriorProximamente">Anterior</button>
-          <button id="btnSiguienteProximamente">Siguiente</button>
+          <button id="btnAnteriorProximamente" class="btnAnterior">
+            <ion-icon name="caret-back-outline"></ion-icon></button>
+
+          <div id="contenedor-peliculas-proximamente" class="contenedor"></div>
+
+          <button id="btnSiguienteProximamente" class="btnSiguiente">
+            <ion-icon name="caret-forward-outline" ></ion-icon>
+          </button>
         </div>
 
        </section>
 
     </main>
 
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="module" src="/index.js"></script>
   </body>
 </html>

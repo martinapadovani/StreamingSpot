@@ -37,7 +37,7 @@ main  .filtros button{
 
     all: unset;
 
-    margin: 1rem 1rem 1rem 8rem;
+    margin: 1rem 1rem 1rem 6rem;
     padding: 0rem 1rem;
     border-radius: 1rem;
     background-color: #303433;
@@ -95,4 +95,24 @@ main .visualizacion-peliculas  .contenedor .pelicula .poster {
 	margin-bottom: 10px;
 	border-radius: 15px;
 }
+
+.paginacion{
+    display: flex;
+    align-items: center;
+  }
+
+  ion-icon {
+    font-size: 40px;
+  }
+  .btnAnterior{
+    background: none;
+    border: none;
+    color: #fff;
+  }
+
+  .btnSiguiente{
+    background: none;
+    border: none;
+    color: #fff;
+  }
 

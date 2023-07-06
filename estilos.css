@@ -45,13 +45,13 @@ header nav {
 
 header nav ul {
   display: flex; 
-  margin: 10px ; 
+  margin: 5px ; 
   padding: 0; 
   list-style: none;
 }
 
 header nav ul li {
-  margin: 10px; 
+  margin: 5px; 
   font-weight: 600;
   font-size: 1.5rem;
 }
