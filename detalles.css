@@ -17,14 +17,55 @@
  box-sizing: border-box; 
 } 
 
+
+main movie-card .informacion-pelicula{
+    display: flex;
+}
+
+
 main movie-card .informacion-pelicula .poster{
-	width: 10%;
+	width: 200px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 80px;
 	margin-bottom: 10px;
+
 	border-radius: 15px;
 }
+main movie-card .informacion-pelicula .trailer{
+    padding: 10px;
+    margin-left: 80px;
+    width: 200px;
+    border-radius: 15px;
+    border: none;
+    color: #303433;
+    display: inline;
+}
+  .link-trailer {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+main movie-card .informacion-pelicula .descripcion{
+    margin: 30px 20px;
+    width: 60%;
+}
+main movie-card .informacion-pelicula .descripcion .linea{
+    color: #303433;
+}
+
 
 main movie-card .informacion-pelicula .iconoPlataforma{
 
     width: 3rem; /* Ancho de la imagen */
     height: 3rem; /* Altura de la imagen */
+    border-radius: 10px ;
+    margin: 3px;
 }
+
+main movie-card .informacion-pelicula hr{
+    color: #303433;
+}
+
+

@@ -93,18 +93,22 @@ class MovieCard extends HTMLElement{// Defino una clase MovieCard que hereda la 
                 
             <section class="informacion-pelicula">
 
-              <img class="poster" src="https://image.tmdb.org/t/p/w500/${this.portada}">
-
-              <a target="_blank" href="https://www.youtube.com/embed/${trailerkey}" >Ver Trailer</a>
-
-                <h2>Titulo: ${this.titulo}</h2>
-                <p>Descripcion: ${this.descripcion}</p>
-                <p>Fecha de estreno: ${this.fechaDeEstreno}</p
-                <p>Generos: ${this.genero}</p
-                <p>Duracion: ${this.duracion}</p
-                <p>Plataformas disponibles: ${this.plataforma}</p
-                <p>Puntaje: ${this.puntuacion}</p
-
+            <div>
+            <img class="poster" src="https://image.tmdb.org/t/p/w500/${this.portada}"> <br>
+            <button class="trailer" > <a target="_blank" href="https://www.youtube.com/embed/${trailerkey}" class="link-trailer">Ver Trailer</a></button>
+           
+            </div>
+            <div class="descripcion" >
+                <h2> ${this.titulo} (${this.fechaDeEstreno})</h2>
+                <p>${this.descripcion}</p> <br><hr class="linea">
+                <p>Generos: ${this.genero}</p> <br>
+                <hr class="linea">
+                <p>Duracion: ${this.duracion}</p> <br>
+                <hr class="linea">
+                <p>Plataformas disponibles: <br>${this.plataforma}</p> <br>
+                <hr class="linea">
+                <p>Puntaje: ${this.puntuacion}</p>
+            </div>
             </section>
             `
             this.insertAdjacentHTML("beforeend", html) //Inserto el contenido HTML en el componente

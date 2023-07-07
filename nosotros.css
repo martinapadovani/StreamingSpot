@@ -35,7 +35,7 @@ width: 65%;
     color: #ffffff;
 }
 .novedades{
-    width: 35%;
+    width: 300px;
     margin: 70px;
     padding: 10px;
     display: flex;
@@ -52,6 +52,7 @@ width: 65%;
     margin: 5px;
     padding: 10px;
     background-color: #D9D9D9;
+    font-weight: bold;
 }
 
 .novedades .input-email{
