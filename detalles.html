@@ -7,56 +7,37 @@
     <link rel="stylesheet" href="detalles.css">
     <title>Detalles</title>
 </head>
-<body>
 
-    
-    <header>
+<body> 
 
-        
+  <header>
+    <nav>
+      <ul>
+       <li><a href="index.html"><img src="s (3).png" alt="" class="logo"></a></li>
+      </ul>
 
-        <nav>
-            <ul>
-              <li><a href="index.html"><img src="s (3).png" alt="" class="logo"></a></li>
-            </ul>
-            <ul>
-              <li><a href="/explorer.html">Explorer</a></li>
-            </ul>
-            <ul>
-              <li><a href="/nosotros.html">Sobre nosotros</a></li>
-            </ul>
-    </header>
+      <ul>
+        <li><a href="/explorer.html">Explorer</a></li>
+      </ul>
 
-    <main>
-        <section class="main-title">
-            <h1>Aqui encontraras todo lo que quieres saber sobre la pelicula!</h1>
-        </section> 
-        <section class="informacion-pelicula">
-          <h2>Titulo</h2>
-          <h3>Sinopsis</h3>
-          <h3>Director</h3>
-          <h3>Elenco</h3>
-          <h3>Año de estreno</h3>
-          <h3>Duración</h3>
-          <h3>Edad mínima</h3>
-        </section>
+      <ul>
+        <li><a href="/nosotros.html">Sobre nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
 
   
-    </main>
-  
-    <footer>
-  
-        <h2>FOOTER</h2>
-  
-    </footer>
+
+  <main>
+
+    <movie-card></movie-card>
+    <!-- Se creará una instancia del componente MovieCard y se ejecutará su constructor, 
+    que a su vez llamará al método mostrarDetalles() para obtener los detalles de la película 
+    y mostrarlos en el componente. -->
+
+  </main>
 
 
-
-
-
-
-
-
-
-    <script type="module" src="/main.js"></script>
+  <script type="module" src="/detalles.js"></script>
 </body>
 </html>

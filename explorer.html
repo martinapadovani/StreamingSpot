@@ -19,7 +19,7 @@
               <li><a href="/explorer.html">Explorer</a></li>
             </ul>
             <ul>
-              <li><a href="/nosotros.html">Sobre nosotros</a></li>
+              <li><a  href="/nosotros.html">Sobre nosotros</a></li>
             </ul>
 
     </header>
@@ -29,19 +29,32 @@
         <section class="busqueda">
             
             <input id="inputDeBusqueda" type="text" placeholder="Búsqueda de peliculas"> 
+            <button id="botonVaciarInput" class="botonVaciarInput">X</button>
             <button id="botonBuscar">Buscar</button>
 
         </section>
 
+        <!-- <div class="paginacion">
 
+          <button id="btnAnterior" class="btnAnterior">
+              <ion-icon name="caret-back-outline"></ion-icon> 
+          </button>
+    
+            <div id="contenedor-peliculas" class="contenedor"></div>
+    
+            <button id="btnSiguiente" class="btnSiguiente">
+               <ion-icon name="caret-forward-outline" ></ion-icon>
+            </button>
+        </div>  -->
+    
         <section class="visualizacion-peliculas" >
     
             <div id="contenedor-peliculas" class="contenedor"></div>
     
             <div class="paginacion">
 
-                <button id="btnAnteriorPopulares">Anterior</button>
-                <button id="btnSiguientePopulares">Siguiente</button>
+                <button id="btnAnterior" class="btnAnterior">Anterior</button>
+                <button id="btnSiguiente" class="btnSiguiente">Siguiente</button>
             </div>
     
         </section>

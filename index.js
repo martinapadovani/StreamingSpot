@@ -7,7 +7,7 @@ const apiKey = 'ffe9e3e0742db9df0c671e43f4b9316c';
 const btnAnteriorPopulares = document.getElementById('btnAnteriorPopulares');
 const btnSiguientePopulares = document.getElementById('btnSiguientePopulares');
 const contenedorPopulares = document.getElementById("contenedor-peliculas-populares")
-let urlPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-MX&page=${pagina}`
+let urlPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&languag=es-AR&page=${pagina}`
 
 
 //Elementos contenedor CARTELERA
@@ -15,14 +15,14 @@ let urlPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}
 const btnAnteriorCartelera = document.getElementById('btnAnteriorCartelera');
 const btnSiguienteCartelera = document.getElementById('btnSiguienteCartelera');
 const contenedorCartelera = document.getElementById("contenedor-peliculas-cartelera")
-let urlCartelera = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=es-MX&page=${pagina}`
+let urlCartelera = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&languag=es-AR&page=${pagina}`
 
 //Elementos contenedor PROXIMAMENTE
 
 const btnAnteriorProximamente = document.getElementById('btnAnteriorProximamente');
 const btnSiguienteProximamente = document.getElementById('btnSiguienteProximamente');
 const contenedorProximamente = document.getElementById("contenedor-peliculas-proximamente")
-let urlProximamente = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=${pagina}`
+let urlProximamente = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=es-AR&page=${pagina}`
 
 
 //CONSUMIR LISTAS
@@ -48,10 +48,11 @@ async function mostrarPeliculas(url, contenedor){
 
         html += `
 			<div class="pelicula">
-            <li><a href="detalles.html"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a></li>
+            <li><a target="_blank" href="detalles.html?id=${pelicula.id}"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a></li>
 			</div>
 		`;
-    })
+    })/*Agrego ?id=${pelicula.id} al enlace, para luego, en el archivo detalles.js, 
+    poder obtener ese ID de los parámetros de consulta y utilizarlo para construir la URL de detalles*/
 
     contenedor.innerHTML = html
 

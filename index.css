@@ -1,128 +1,68 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-  }
-  
-  * { 
-  
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-  } 
-  
-  /*BODY*/
-  
-  body{
-    background-color: #788C85;
-  }
-  
- 
-  
-  
-  /*MAIN*/
-  
-  main {
-    background-color: #788C85;
-  }
-  
-  main h2 {
-  
-    color: #303433;
-    font-size: 1.8rem;
-  }
-  
-  main .main-content {
-    color: #ffffff;
-  }
-  
-  main .main-content h2 {
-    width: 100vw;
-    text-align: center;
-    margin: 1rem;
-  }
-  
-  main .main-content p {
-  
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin: auto;
-    margin-bottom: 0.5rem;
-    width: 80vw;
-    text-align: center;
-  
-  }
-  
-  #presentacion-tendencias {
-    color: #303433;
-    font-size: 1.5rem;
-  }
-  
-  #presentacion-tendencias{
-    text-align: center;
-  }
-    /*CONTENEDOR*/
-    .contenedor {
-      width: 100%;
-      max-width: max-content;
-    
-      display: flex;
-      justify-content:space-evenly;
-    }
-    
-    .contenedor .pelicula {
-      display: flex;
-      flex-wrap: wrap;
-      text-align: center;
-      list-style: none;
-    }
-    
-    .contenedor .pelicula .titulo {
-      font-size: 16px;
-      font-weight: 600;
-    }
-    
-    .contenedor .pelicula .poster {
-      width: 100%;
-      margin-bottom: 10px;
-      border-radius: 15px;
-    }
+ font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ line-height: 1.5;
+ font-weight: 400;
 
-    .paginacion{
-      display: flex;
-      align-items: center;
-    }
-
-    ion-icon {
-      font-size: 40px;
-    }
-    .btnAnterior{
-      background: none;
-      border: none;
-      color: #fff;
-    }
-
-    .btnSiguiente{
-      background: none;
-      border: none;
-      color: #fff;
-    }
-  /*FOOTER*/
+ font-synthesis: none;
+ text-rendering: optimizeLegibility;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ -webkit-text-size-adjust: 100%;
+}
   
-  footer{
-    background-color: #303433;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+} 
+  
+/*BODY*/
+  
+body{
+  background-color: #788C85;
+}
+  
+/*MAIN*/
+  
+main {
+  background-color: #788C85;
+}
+  
+main h2 {
+  color: #303433;
+  font-size: 1.8rem;
+}
+  
+main .main-content {
+  color: #ffffff;
+}
+  
+main .main-content h2 {
+  width: 100vw;
+  text-align: center;
+  margin: 1rem;
+}
+  
+main .main-content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  width: 80vw;
+  text-align: center;
+}
+  
+#presentacion-tendencias {
+  color: #303433;
+  font-size: 1.5rem;
+}
+  
+#presentacion-tendencias{
+  text-align: center;
+}
 
-  /*CONTENEDOR*/
+
+/*CONTENEDOR*/
 
 .contenedor {
 	width: 100%;
@@ -136,6 +76,7 @@
 	text-align: center;
   margin-left: 5px;
   margin-right: 5px;
+  list-style: none;
 }
 
 .contenedor .pelicula .titulo {
@@ -148,3 +89,45 @@
 	margin-bottom: 10px;
 	border-radius: 15px;
 }
+    
+.contenedor .pelicula {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  list-style: none;
+}
+
+/* PAGINACION */
+
+.paginacion{
+  display: flex;
+  align-items: center;
+}
+
+ion-icon {
+  font-size: 40px;
+}
+
+.btnAnterior{
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btnSiguiente{
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+} 
+
+/*FOOTER*/
+  
+  footer{
+    background-color: #303433;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
