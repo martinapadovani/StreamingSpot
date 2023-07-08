@@ -35,33 +35,64 @@
 
         </section>
 
-        <section class="visualizacion-peliculas" >
+        <section class="contenedor-peliculas-filtros">
     
-            <div class="paginacion">
+            <section class="filtros">
+                
+                <h2>FILTROS</h2>
+    
+                <section  id="seccion-generos">
+    
+                    <H3>Géneros</H3> <button class="btnVer" id="btn-generos">Ver</button>
+    
+                    <ul class="contenedor-filtros" id="contenedor-generos"></ul>
+    
+                </section>
+    
+                <section id="seccion-fechaDeEstreno">
+    
+                    <h3>Fechas de Estreno</h3> <button class="btnVer"> Ver</button>
+                    <div class="contenedor-filtros" id="contenedor-fechaDeEstreno">fechas</div>
+    
+                </section>
+    
+                <section id="seccion-plataformas">
+    
+                    <h3>Plataformas</h3> <button class="btnVer" >Ver</button>
+                    <div class="contenedor-filtros" id="contenedor-plataformas">plataformas</div>
+    
+                </section>
+    
+                <section id="seccion-calificacion">
+    
+                    <h3>Calificación</h3> <button class="btnVer"> Ver </button>
+                    <div class="contenedor-filtros" id="contenedor-calificacion">califiaciones</div>
+    
+                </section>
+                
+                <button id="boton-filtros">Aplicar</button>
+    
+            </section>
 
-                <button id="btnAnteriorPopulares" class="btnAnterior">
-                    <ion-icon name="caret-back-outline"></ion-icon>
-                </button>
-                <div id="contenedor-peliculas" class="contenedor"></div>
-                <button id="btnSiguientePopulares" class="btnSiguiente">
-                    <ion-icon name="caret-forward-outline" ></ion-icon>
-                 </button>
-            </div>
+            <section class="visualizacion-peliculas" >
     
+                <div class="paginacion">
+    
+                    <button id="btnAnterior" class="btnAnterior">
+                        <ion-icon name="caret-back-outline"></ion-icon>
+                    </button>
+                    <div id="contenedor-peliculas" class="contenedor"></div>
+                    <button id="btnSiguiente" class="btnSiguiente">
+                        <ion-icon name="caret-forward-outline" ></ion-icon>
+                     </button>
+                </div>
+        
+            </section>
+
+
         </section>
 
 
-        <section class="filtros">
-            
-            <h2>FILTROS</h2>
-            <H3>Géneros</H3>
-            <h3>Calificación</h3>
-            <h3>Fechas de Estreno</h3>
-            <h3>Plataformas</h3>
-
-            <button id="boton-filtros">Aplicar</button>
-
-         </section>
  
 
     </main>

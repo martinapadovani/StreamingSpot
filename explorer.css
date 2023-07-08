@@ -17,57 +17,32 @@
 } 
 
 main {
-    display: grid;
+
+    display: flex;
+    flex-direction: column;
+
+    /* display: grid;
     grid-template-columns: 20% 65% 25%;
-    grid-template-rows: 15% 85%;
+    grid-template-rows: 10% 90%; */
 }
 
-/*APLICADOR FILTROS*/
+main .contenedor-peliculas-filtros {
 
-main .filtros {
-
-    grid-row: 2;
-    grid-column: 1 / 2;
-
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-
-    margin: 1rem; 
-    padding: 1rem;  
-    background-color: #D9D9D9;
-
-    border-radius: 1rem;
-
-}
-
-main  .filtros h2,
-main  .filtros h3 {
-
-    margin: 1rem -10rem 1rem 1rem; 
-    color: #393d3ce7;
-}
-
-main  .filtros h3 {
-    font-weight: 500;
-}
-
-main  .filtros button{
-
-    all: unset;
-
-    margin: 1rem 1rem 1rem 6rem;
-    padding: 0rem 1rem;
-    border-radius: 1rem;
-    background-color: #303433;
-    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    width: 100vmax;
+    
 }
 
 /*BARRA DE BUSQUEDA*/
 
 main .busqueda {
 
-    grid-row: 1;
-    grid-column: 3 / 4;
+    /* grid-row: 1;
+    grid-column: 3 / 4; */
+
+    justify-content: flex-end;
+
     display: flex;
     align-items: center;
     gap: 1rem; 
@@ -90,38 +65,133 @@ main .busqueda .botonVaciarInput{
     color: #D9D9D9;
 }
 
+/*APLICADOR FILTROS*/
+
+main .filtros {
+
+    /* grid-row: 2;
+    grid-column: 1 / 2; */
+
+    display: grid;
+    grid-template-rows: 5% 20% 20% 20% 20% 14%;
+    
+
+    margin: 2rem 1rem 10rem; 
+    padding: 1rem;  
+    background-color: #D9D9D9;
+
+    border-radius: 1rem;
+
+}
+
+main  .filtros h2,
+main  .filtros h3 {
+
+    margin: 1rem -10rem 1rem 1rem; 
+    color: #393d3ce7;
+}
+
+main  .filtros h3 {
+    font-weight: 500;
+}
+
+main  .filtros #boton-filtros{
+
+    all: unset;
+
+    margin: 3rem 1rem 1rem 10rem;
+    padding: 0rem 2rem;
+    border-radius: 1rem;
+    background-color: #303433;
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+main  .filtros .contenedor-filtros {
+
+    margin: 1rem;
+    opacity: 0;
+    transform: translateX(-200%);
+}
+
+main  .filtros .ver{
+
+    opacity: 1;
+    transition: opacity 1s ease;
+    transform: translateX(0%);
+
+}
+
+/* PELICULAS X GENERO*/
+
+main  .filtros .btnVer{
+
+    all: unset;
+
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    border-radius: 1rem;
+    background-color: #303433;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+main  .filtros .ver .item-genero{
+
+    list-style-type: none;
+
+    cursor: pointer;
+
+    background-color: #788C85;
+    border-radius: 1rem;
+    margin: 1rem 5rem 1rem 1rem;
+    padding: 0.4rem;
+}
+
+
+
 /*CONTENEDOR PELICULAS*/
 
 main .visualizacion-peliculas {
 
-    grid-row: 2;
-    grid-column: 2 / 4;
+    /* grid-row: 2;
+    grid-column: 2 / 4; */
     list-style-type: none;
+    margin: auto;
+    height: 60%;
+    width: 60%;
 }
 
 main .visualizacion-peliculas .contenedor {
-	width: 100%;
+
+	width: 80%;
 	max-width: max-content;
 
-	display: flex;
-	justify-content:space-evenly
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
 }
 
 main .visualizacion-peliculas  .contenedor .pelicula {
+
 	text-align: center;
-    margin-left: 5px;
-    margin-right: 5px;
+    cursor: pointer;
 }
 
-main .visualizacion-peliculas  .contenedor .pelicula .titulo {
+/* main .visualizacion-peliculas  .contenedor .pelicula .titulo {
 	font-size: 16px;
 	font-weight: 600;
-}
+} */
 
 main .visualizacion-peliculas  .contenedor .pelicula .poster {
 	width: 100%;
 	margin-bottom: 10px;
 	border-radius: 15px;
+
+
 }
 
 /*PAGINACION*/
@@ -148,6 +218,9 @@ main .visualizacion-peliculas  .contenedor .pelicula .poster {
     color: #fff;
     cursor: pointer;
 } 
+
+
+
 
 
 

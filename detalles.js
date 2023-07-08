@@ -67,12 +67,14 @@ class MovieCard extends HTMLElement{// Defino una clase MovieCard que hereda la 
             this.genero = nombreGeneros
 
         //Plataforma
-            const plataformasDisponibles = plataforma.results.AR.flatrate; // Arreglo de plataformas disponibles
+            const plataformasDisponibles = plataforma.results; // Arreglo de plataformas disponibles
             let plataformasHTML = ""; // Variable para almacenar los elementos HTML de las plataformas
 
-            if(plataformasDisponibles && plataformasDisponibles.length > 0){
-                plataformasDisponibles.forEach((plataforma) => {
+            // Verificar si hay plataformas disponibles en AR
+            if(plataformasDisponibles.AR && plataformasDisponibles.AR.flatrate &&plataformasDisponibles.AR.flatrate.length > 0){
+                plataforma.results.AR.flatrate.forEach((plataforma) => {
                
+                    // Procesar las plataformas disponibles
                     const nombrePlataforma = plataforma.provider_name;
                     const iconoPlataforma = plataforma.logo_path;
                     // Construir el elemento HTML para cada plataforma
@@ -84,6 +86,7 @@ class MovieCard extends HTMLElement{// Defino una clase MovieCard que hereda la 
                 plataformasHTML = ""
             }
             this.plataforma = plataformasHTML
+
             
         //Trailer
            const trailerkey = trailer.results[0].key

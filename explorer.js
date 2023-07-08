@@ -10,7 +10,6 @@ let urlActual = urlPopulares;
 //Variable global que almacenará la URL actual en uso.
 //La inicializo con la URL de las películas populares por defecto.
 
-
 //BOTONES
 
 const btnAnterior= document.getElementById('btnAnterior');
@@ -22,6 +21,89 @@ const btnBuscar = document.getElementById("botonBuscar")
 const btnVaciar = document.getElementById("botonVaciarInput");
 let query;
 let urlSearchMovie = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}&include_adult=false&language=es-AR&page=page=${pagina}`
+
+//APLICADOR DE FILTROS
+
+//Por genero
+const btnVerGeneros = document.getElementById("btn-generos")
+const contenedorGeneros = document.getElementById("contenedor-generos")
+let generoID;
+let urlPeliculasxGenero = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&with_genres=${generoID}`
+
+const generos = [
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    },
+    {
+      "id": 16,
+      "name": "Animación"
+    },
+    {
+      "id": 35,
+      "name": "Comedia"
+    },
+    {
+      "id": 80,
+      "name": "Crimen"
+    },
+    {
+      "id": 99,
+      "name": "Documental"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10751,
+      "name": "Familia"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    },
+    {
+      "id": 36,
+      "name": "Historia"
+    },
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 10402,
+      "name": "Música"
+    },
+    {
+      "id": 9648,
+      "name": "Misterio"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    },
+    {
+      "id": 10770,
+      "name": "Película de TV"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    },
+    {
+      "id": 10752,
+      "name": "Bélica"
+    }
+  ]
 
 
 //OBTENER PELICULAS
@@ -47,7 +129,7 @@ async function mostrarPeliculas(url){
 
         html += `
 			<div class="pelicula">
-            <li><a target="_blank" href="detalles.html?id=${pelicula.id}"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a></li>
+            <a target="_blank" href="detalles.html?id=${pelicula.id}"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
 			</div>
 		`;
         // agregará el ID de la película como un parámetro de consulta en el enlace hacia la página de detalles.
@@ -92,7 +174,7 @@ async function paginaAnterior(url) {
     }
 }
  
-btnAnterior.addEventListener("click", () => console.log("funciono"))
+
 btnAnterior.addEventListener("click", () => paginaAnterior(urlActual))
 btnSiguiente.addEventListener("click", () => paginaSiguiente(urlActual))
 /*Los botones de paginación utilizarán la URL actualmente en uso y cambiarán la página de esa URL.
@@ -117,7 +199,6 @@ input.addEventListener("input", () => {
 btnVaciar.addEventListener("click", function() {
     input.value = "";
     btnVaciar.style.display = "none";
-
     //Al clickear el boton vaciamos el contenido del input, y lo ocultamos
 });
 
@@ -134,8 +215,42 @@ btnBuscar.addEventListener("click", async ()  => {
     await mostrarPeliculas(urlSearchMovie)
 })
 
+//APLICADOR DE FILTROS
 
+//Generos
 
+btnVerGeneros.addEventListener("click", () => {
 
+    console.log("probando")
+    
+    contenedorGeneros.classList.toggle("ver")
+})
+
+const generoSeleccionado = []
+
+async function obtenerPeliculasGenero() {
+
+    contenedorGeneros.innerHTML = '';
+
+    generos.forEach(genero => {
+
+        const itemGenero = document.createElement('li');
+        itemGenero.classList.add('item-genero');
+        itemGenero.id = genero.id;
+        itemGenero.innerText = genero.name;
+
+        itemGenero.addEventListener('click', async () => {
+
+            urlPeliculasxGenero = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&with_genres=${genero.id}`
+            await obtenerPeliculas(urlPeliculasxGenero)
+            await mostrarPeliculas(urlPeliculasxGenero)
+
+            console.log(urlPeliculasxGenero)
+        })
+        contenedorGeneros.append(itemGenero);
+    })
+}
+
+obtenerPeliculasGenero()
 
 
