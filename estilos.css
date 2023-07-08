@@ -76,3 +76,15 @@ footer{
   bottom: 0;
   width: 100%;
 }
+footer .footer-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+footer .footer-nav ul{
+  list-style: none;
+  color: #fff;
+}

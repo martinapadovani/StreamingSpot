@@ -109,6 +109,8 @@ main .visualizacion-peliculas .contenedor {
 
 main .visualizacion-peliculas  .contenedor .pelicula {
 	text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 main .visualizacion-peliculas  .contenedor .pelicula .titulo {
@@ -124,16 +126,7 @@ main .visualizacion-peliculas  .contenedor .pelicula .poster {
 
 /*PAGINACION*/
 
-.btnAnterior{
-    cursor: pointer;
-
-}
-
-.btnSiguiente{
-    cursor: pointer;
-}
-
-/* .paginacion{
+.paginacion{
     display: flex;
     align-items: center;
 }
@@ -146,11 +139,16 @@ main .visualizacion-peliculas  .contenedor .pelicula .poster {
     background: none;
     border: none;
     color: #fff;
+    cursor: pointer;
 }
 
 .btnSiguiente{
     background: none;
     border: none;
     color: #fff;
-} */
+    cursor: pointer;
+} 
+
+
+
 
