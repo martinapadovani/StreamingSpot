@@ -68,11 +68,14 @@ main movie-card .informacion-pelicula hr{
     color: #303433;
 }
 
-/*FOOTER*/
-footer{
-    background-color: #303433;
-    bottom: 0;
+body {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  footer {
     position: absolute;
+    bottom: 0;
     width: 100%;
   }
 

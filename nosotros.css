@@ -33,10 +33,13 @@ width: 65%;
     margin-bottom: 0.5rem;
     text-align: center justify;
     color: #ffffff;
+    width: 60%;
 }
 .novedades{
     width: 300px;
+    height: 30vh;
     margin: 70px;
+    margin-top: 150px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -63,11 +66,13 @@ input[type="email"]::placeholder{
     color: black;
     font-weight: bold;
 }
-input:focus {
+.input-email:focus {
     outline: none;
 }
  .input-submit{
     border: none;
+    cursor: pointer;    
+    
 }
 
 
@@ -76,11 +81,6 @@ input:focus {
     display: flex;
 }
 
-footer{
-    background-color: #303433;
-    position: absolute;
-    width: 100%;
-  }
 
 
 

@@ -51,12 +51,12 @@ main .busqueda {
 
 main .busqueda #inputDeBusqueda,
 main .busqueda #botonBuscar {
-    margin-top: 1rem;
+    margin-top: 2rem;
     background-color: #D9D9D9;
     border-radius: 1rem;
-    padding: 0.5rem; 
+    padding: 1rem; 
     border: none;
-
+    font-size: medium;
     cursor: pointer;
 }
 
@@ -65,7 +65,7 @@ main .busqueda .botonVaciarInput{
     background: none;
     border: none;
     color: #D9D9D9;
-
+    font-size: x-large;
     display: none;
 
     cursor: pointer;
