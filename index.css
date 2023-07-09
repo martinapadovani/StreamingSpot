@@ -63,6 +63,8 @@ main .main-content p {
 
 main h3{
   margin: 10px;
+  font-size: x-large;
+  color: #303433;
 }
 
 
@@ -90,6 +92,7 @@ main h3{
 
 .contenedor .pelicula .poster {
 	width: 100%;
+  height: 90px;
 	margin-bottom: 10px;
 	border-radius: 15px;
 }
@@ -130,7 +133,6 @@ ion-icon {
   
   footer{
     background-color: #303433;
-    position: fixed;
     bottom: 0;
     width: 100%;
   }

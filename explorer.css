@@ -75,9 +75,6 @@ main .busqueda .botonVaciarInput{
 
 main .filtros {
 
-    /* grid-row: 2;
-    grid-column: 1 / 2; */
-
     display: grid;
     grid-template-rows: 5% 20% 20% 20% 20% 14%;
     
@@ -198,7 +195,7 @@ main .visualizacion-peliculas {
     /* grid-row: 2;
     grid-column: 2 / 4; */
     list-style-type: none;
-    margin: auto;
+    margin: 50px;
     height: 60%;
     width: 60%;
 }

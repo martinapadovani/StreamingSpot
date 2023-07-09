@@ -26,7 +26,7 @@ body{
 /*HEADER*/
 
 header {
-  height: 8vh;
+  height: 13vh;
   width: 100vmax;
   background-color: #84CBB1;
   color: #fff;
@@ -72,7 +72,6 @@ main {
 
 footer{
   background-color: #303433;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
