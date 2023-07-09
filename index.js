@@ -24,6 +24,12 @@ const btnSiguienteProximamente = document.getElementById('btnSiguienteProximamen
 const contenedorProximamente = document.getElementById("contenedor-peliculas-proximamente")
 let urlProximamente = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=es-AR&page=${pagina}`
 
+//Elementos contenedor mayor VALORACION
+
+const btnAnteriorValoracion = document.getElementById('btnAnteriorValoracion');
+const btnSiguienteValoracion = document.getElementById('btnSiguienteValoracion');
+const contenedorValoracion = document.getElementById("contenedor-peliculas-valoracion")
+let urlValoracion = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${pagina}`
 
 //CONSUMIR LISTAS
 
@@ -64,7 +70,11 @@ async function mostrarPeliculas(url, contenedor){
 
 async function paginaSiguiente(url, contenedor){
 
-    if(pagina < 1000){
+    const respuesta = await obtenerPeliculas(url)
+    const paginasTotales = respuesta.total_pages
+    console.log(paginasTotales)
+
+    if(pagina < paginasTotales){
         pagina ++;
         url = `${url}&page=${pagina}`
         await obtenerPeliculas(url);
@@ -107,7 +117,11 @@ mostrarPeliculas(urlProximamente, contenedorProximamente)
 btnAnteriorProximamente.addEventListener("click",() => paginaAnterior(urlProximamente, contenedorProximamente))
 btnSiguienteProximamente.addEventListener("click",() => paginaSiguiente(urlProximamente, contenedorProximamente))
 
+//PELICULAS MAYOR VALORACION
 
-
+obtenerPeliculas(urlValoracion)
+mostrarPeliculas(urlValoracion, contenedorValoracion)
+btnAnteriorValoracion.addEventListener("click",() => paginaSiguiente(urlValoracion, contenedorValoracion))
+btnSiguienteValoracion.addEventListener("click",() => paginaSiguiente(urlValoracion, contenedorValoracion))
 
 

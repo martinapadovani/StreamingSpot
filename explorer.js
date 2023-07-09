@@ -2,6 +2,7 @@
 let pagina = 1
 const apiKey = 'ffe9e3e0742db9df0c671e43f4b9316c';
 const contenedorPeliculas = document.getElementById("contenedor-peliculas")
+const notFound = document.getElementById("NotFound")
 
 
 //PELICULAS X DEFECTO
@@ -24,86 +25,52 @@ let urlSearchMovie = `https://api.themoviedb.org/3/search/movie?query=${query}&a
 
 //APLICADOR DE FILTROS
 
-//Por genero
+//x genero
 const btnVerGeneros = document.getElementById("btn-generos")
 const contenedorGeneros = document.getElementById("contenedor-generos")
 let generoID;
+let listaGeneros = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=es`
 let urlPeliculasxGenero = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&with_genres=${generoID}`
 
-const generos = [
-    {
-      "id": 28,
-      "name": "Acción"
-    },
-    {
-      "id": 12,
-      "name": "Aventura"
-    },
-    {
-      "id": 16,
-      "name": "Animación"
-    },
-    {
-      "id": 35,
-      "name": "Comedia"
-    },
-    {
-      "id": 80,
-      "name": "Crimen"
-    },
-    {
-      "id": 99,
-      "name": "Documental"
-    },
-    {
-      "id": 18,
-      "name": "Drama"
-    },
-    {
-      "id": 10751,
-      "name": "Familia"
-    },
-    {
-      "id": 14,
-      "name": "Fantasía"
-    },
-    {
-      "id": 36,
-      "name": "Historia"
-    },
-    {
-      "id": 27,
-      "name": "Terror"
-    },
-    {
-      "id": 10402,
-      "name": "Música"
-    },
-    {
-      "id": 9648,
-      "name": "Misterio"
-    },
-    {
-      "id": 10749,
-      "name": "Romance"
-    },
-    {
-      "id": 878,
-      "name": "Ciencia ficción"
-    },
-    {
-      "id": 10770,
-      "name": "Película de TV"
-    },
-    {
-      "id": 53,
-      "name": "Suspense"
-    },
-    {
-      "id": 10752,
-      "name": "Bélica"
-    }
-  ]
+// x fecha de estreno
+
+const btnVerFechaDeEstreno = document.getElementById("btn-fechaDeEstreno")
+const contenedorFechaDeEstreno  = document.getElementById("contenedor-fechaDeEstreno")
+
+const inputFechaInicial = document.getElementById("fecha-inicial")
+const inputFechaLimite = document.getElementById("fecha-limite")
+const btnBuscarxFecha = document.getElementById("buscarPorFecha")
+let fechaInicial;
+let fechaLimite;
+let urlPeliculasxFecha = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&primary_release_date.gte=${fechaInicial}&primary_release_date.lte=${fechaLimite}`;
+
+// x plataformas
+
+const btnVerPlataformas = document.getElementById("btn-plataformas")
+const contenedorPlataformas  = document.getElementById("contenedor-plataformas")
+
+let listaPlataformas = `https://api.themoviedb.org/3/watch/providers/movie?api_key=${apiKey}&language=es-AR&watch_region=AR`
+
+let plataformaID;
+let urlPeliculasxPlataforma = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&watch_region=AR&with_watch_providers=${plataformaID}`
+
+// x orden
+
+const btnVerOrden = document.getElementById("btn-orden")
+const contenedorOrden  = document.getElementById("contenedor-orden")
+
+
+const popularidadASC = document.getElementById("orden-popularidad-asc")
+const popularidadDESC = document.getElementById("orden-popularidad-desc")
+const valoracionASC = document.getElementById("orden-valoracion-asc")
+const valoracionDESC = document.getElementById("orden-valoracion-desc")
+const cartelera = document.getElementById("orden-cartelera")
+
+let urlPopularesASC = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&page=${pagina}&sort_by=popularity.asc`
+let urlPopularesDESC = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&page=${pagina}&sort_by=popularity.desc`
+let urlValoracionASC = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&page=${pagina}&sort_by=vote_average.asc`
+let urlValoracionDESC = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&page=${pagina}&sort_by=vote_average.desc`
+let urlCartelera = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&languag=es-AR&page=${pagina}`
 
 
 //OBTENER PELICULAS
@@ -114,6 +81,7 @@ async function obtenerPeliculas(url){
 
     respuesta = await respuesta.json()  
 
+    console.log(url)
     console.log(respuesta)
 
     return respuesta
@@ -125,21 +93,35 @@ async function mostrarPeliculas(url){
 
     let html = ''
 
-    respuesta.results.forEach(pelicula => {
+    if(respuesta.results.length > 0){
 
+        respuesta.results.forEach(pelicula => {
+
+            html += `
+                <div class="pelicula">
+                <a target="_blank" href="detalles.html?id=${pelicula.id}"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
+                </div>
+            `;
+            // agregará el ID de la película como un parámetro de consulta en el enlace hacia la página de detalles.
+
+            notFound.innerHTML = ''
+            contenedorPeliculas.innerHTML = html
+
+    
+        }) /*Agrego ?id=${pelicula.id} al enlace, para luego, en el archivo detalles.js, 
+        poder obtener ese ID de los parámetros de consulta y utilizarlo para construir la URL de detalles*/
+
+    }else{
         html += `
-			<div class="pelicula">
-            <a target="_blank" href="detalles.html?id=${pelicula.id}"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
-			</div>
-		`;
-        // agregará el ID de la película como un parámetro de consulta en el enlace hacia la página de detalles.
-
-    }) /*Agrego ?id=${pelicula.id} al enlace, para luego, en el archivo detalles.js, 
-    poder obtener ese ID de los parámetros de consulta y utilizarlo para construir la URL de detalles*/
+        <h2 class="NotFound">Sin coincidencias!</h2>
+        `
+        contenedorPeliculas.innerHTML = ''
+        notFound.innerHTML = html
+    }
 
 
-    contenedorPeliculas.innerHTML = html
    console.log(respuesta.page)
+   console.log(respuesta.total_pages)
 
    urlActual = url; // Actualiza la URL actual con la ultima url que se haya consumido/mostrado
 }
@@ -153,7 +135,11 @@ mostrarPeliculas(urlPopulares)
 //PAGINACION
 async function paginaSiguiente(url){
 
-    if(pagina < 1000){
+    const respuesta = await obtenerPeliculas(url)
+    const paginasTotales = respuesta.total_pages
+    console.log(paginasTotales)
+
+    if(pagina < paginasTotales){
         pagina ++;
         url = `${url}&page=${pagina}`
         console.log(pagina)
@@ -209,30 +195,38 @@ btnBuscar.addEventListener("click", async ()  => {
         urlSearchMovie = `https://api.themoviedb.org/3/search/movie?query=${input.value}&api_key=${apiKey}&include_adult=false&language=es-AR&page=1`
         console.log(input.value)
         console.log(urlSearchMovie)
-        
     }
+
     await obtenerPeliculas(urlSearchMovie)
     await mostrarPeliculas(urlSearchMovie)
 })
 
 //APLICADOR DE FILTROS
 
+
+//BOTONES VER + 
+
+function botonVer(boton, contenedor){
+
+    boton.addEventListener("click", () => {
+
+        console.log("probando")
+        
+        contenedor.classList.toggle("ver")
+    })
+}
+
 //Generos
 
-btnVerGeneros.addEventListener("click", () => {
-
-    console.log("probando")
-    
-    contenedorGeneros.classList.toggle("ver")
-})
-
-const generoSeleccionado = []
+botonVer(btnVerGeneros, contenedorGeneros)
 
 async function obtenerPeliculasGenero() {
 
+    const listaDeGeneros = await obtenerPeliculas(listaGeneros)
+
     contenedorGeneros.innerHTML = '';
 
-    generos.forEach(genero => {
+    listaDeGeneros.genres.forEach(genero => {
 
         const itemGenero = document.createElement('li');
         itemGenero.classList.add('item-genero');
@@ -253,4 +247,87 @@ async function obtenerPeliculasGenero() {
 
 obtenerPeliculasGenero()
 
+//Fecha de estreno
 
+botonVer(btnVerFechaDeEstreno, contenedorFechaDeEstreno)
+
+btnBuscarxFecha.addEventListener("click", async ()  => {
+
+    if(inputFechaInicial.value && inputFechaLimite.value){
+
+        fechaInicial = inputFechaInicial.value
+        fechaLimite = inputFechaLimite.value
+        urlPeliculasxFecha = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&primary_release_date.gte=${fechaInicial}&primary_release_date.lte=${fechaLimite}`;
+        await obtenerPeliculas(urlPeliculasxFecha)
+        await mostrarPeliculas(urlPeliculasxFecha)
+    }
+})
+
+//Plataformas
+
+botonVer(btnVerPlataformas, contenedorPlataformas)
+
+async function obtenerPlataformas() {
+
+    const listaDePlataformas = await obtenerPeliculas(listaPlataformas)
+
+    console.log(listaDePlataformas)
+
+    contenedorPlataformas.innerHTML = '';
+
+    listaDePlataformas.results.forEach(plataforma => {
+
+        const itemPlataforma = document.createElement('li');
+        itemPlataforma.classList.add('item-plataforma');
+        itemPlataforma.id = plataforma.provider_id;
+        itemPlataforma.innerText = plataforma.provider_name;
+        itemPlataforma.innerHTML= `
+        <img class="iconoPlataforma" src="https://image.tmdb.org/t/p/original${plataforma.logo_path}" alt="${plataforma.provider_name}">
+        `
+
+        itemPlataforma.addEventListener('click', async () => {
+
+            urlPeliculasxPlataforma = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&language=es-AR&watch_region=AR&with_watch_providers=${plataforma.provider_id}`
+            await obtenerPeliculas(urlPeliculasxPlataforma)
+            await mostrarPeliculas(urlPeliculasxPlataforma)
+
+            console.log(urlPeliculasxPlataforma)
+        })
+
+        contenedorPlataformas.append(itemPlataforma);
+    })
+}
+
+obtenerPlataformas()
+
+async function probar (){
+
+    const respuesta = await obtenerPeliculas(urlPopularesASC)
+    const respuesta1 = await obtenerPeliculas(urlPopularesDESC)
+    console.log("peliculas x orden ascendente")
+    console.log(respuesta)
+    console.log("peliculas x orden descendente")
+    console.log(respuesta1)
+
+    //await mostrarPeliculas(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-AR&watch_region=AR&with_watch_providers=337`)
+}
+probar ()
+
+//Orden
+
+botonVer(btnVerOrden, contenedorOrden)
+
+async function aplicarOrden(tipoDeOrden, url){
+
+    tipoDeOrden.addEventListener("click", async () => {
+        await obtenerPeliculas(url);
+        await mostrarPeliculas(url);    
+    })
+}
+
+aplicarOrden(popularidadASC, urlPopularesASC)
+aplicarOrden(popularidadDESC, urlPopularesDESC)
+aplicarOrden(valoracionASC, urlValoracionASC)
+aplicarOrden(valoracionDESC, urlValoracionDESC)
+aplicarOrden(cartelera, urlCartelera)
+    

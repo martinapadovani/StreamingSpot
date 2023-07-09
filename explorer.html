@@ -51,22 +51,32 @@
     
                 <section id="seccion-fechaDeEstreno">
     
-                    <h3>Fechas de Estreno</h3> <button class="btnVer"> Ver</button>
-                    <div class="contenedor-filtros" id="contenedor-fechaDeEstreno">fechas</div>
+                    <h3>Fechas de Estreno</h3> <button class="btnVer" id="btn-fechaDeEstreno"> Ver</button>
+                    <div class="contenedor-filtros" id="contenedor-fechaDeEstreno">
+                        <p>Desde: </p> <input type="date" id="fecha-inicial">
+                        <p>Hasta: </p> <input type="date" id="fecha-limite">
+                        <button id="buscarPorFecha">Buscar</button>
+                    </div>
     
                 </section>
     
                 <section id="seccion-plataformas">
     
-                    <h3>Plataformas</h3> <button class="btnVer" >Ver</button>
+                    <h3>Plataformas</h3> <button class="btnVer" id="btn-plataformas">Ver</button>
                     <div class="contenedor-filtros" id="contenedor-plataformas">plataformas</div>
     
                 </section>
+
+                <section id="seccion-orden">
     
-                <section id="seccion-calificacion">
-    
-                    <h3>Calificación</h3> <button class="btnVer"> Ver </button>
-                    <div class="contenedor-filtros" id="contenedor-calificacion">califiaciones</div>
+                    <h3>Orden</h3> <button class="btnVer" id="btn-orden"> Ver </button>
+                    <div class="contenedor-filtros" id="contenedor-orden">
+                        <li class="tipo-de-orden" id="orden-popularidad-desc" >Popularidad Descendente</li>
+                        <li class="tipo-de-orden" id="orden-popularidad-asc" >Popularidad Ascendente</li>
+                        <li class="tipo-de-orden" id="orden-valoracion-desc" >Valoracion Descendente</li>
+                        <li class="tipo-de-orden" id="orden-valoracion-asc" >Valoracion Ascendente</li>
+                        <li class="tipo-de-orden" id="orden-cartelera" >Cartelera</li>
+                    </div>
     
                 </section>
                 
@@ -75,6 +85,8 @@
             </section>
 
             <section class="visualizacion-peliculas" >
+
+                <h2 id="NotFound"></h2>
     
                 <div class="paginacion">
     
@@ -84,7 +96,7 @@
                     <div id="contenedor-peliculas" class="contenedor"></div>
                     <button id="btnSiguiente" class="btnSiguiente">
                         <ion-icon name="caret-forward-outline" ></ion-icon>
-                     </button>
+                    </button>
                 </div>
         
             </section>

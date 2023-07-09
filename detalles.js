@@ -89,7 +89,15 @@ class MovieCard extends HTMLElement{// Defino una clase MovieCard que hereda la 
 
             
         //Trailer
-           const trailerkey = trailer.results[0].key
+
+         let trailerkey;
+
+         if(trailer.results[0] && trailer.results[0].key){
+            const trailerkeyObtenida = trailer.results[0].key
+
+            trailerkey = trailerkeyObtenida
+         }
+
 
         //Defino un html con los contenidos y atributos creados en base a la API
             const html = `
