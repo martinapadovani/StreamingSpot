@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="explorer.css">
+    <link rel="stylesheet" href="explorer2.css">
     <link rel="stylesheet" href="estilos.css">
     <title>Explorer</title>
 </head>
@@ -40,37 +40,67 @@
             <section class="filtros">
                 
                 <h2>FILTROS</h2>
-                <section  id="seccion-generos">
+                <section class="tipo-de-filtro" id="seccion-generos">
                     
     
-                    <H3>Géneros</H3> <button class="btnVer" id="btn-generos">Ver</button>
+                    <section class="titulo-boton">
+                        <H3>Géneros</H3>
+                        <button class="btnVer" id="btn-generos">
+                            <span class="btnVer-icono">&#9660;</span> <!-- Flecha hacia abajo -->
+                        </button>
+                    </section>
+
     
                     <ul class="contenedor-filtros" id="contenedor-generos"></ul>
                     <ul class="submenu-filtros" id="submenu-generos">
     
                 </section>
     
-                <section id="seccion-fechaDeEstreno">
+                <section class="tipo-de-filtro" id="seccion-fechaDeEstreno">
     
-                    <h3>Fechas de Estreno</h3> <button class="btnVer" id="btn-fechaDeEstreno"> Ver</button>
+                    <section class="titulo-boton" >
+                        <h3>Fechas de Estreno</h3>
+                        <button class="btnVer" id="btn-fechaDeEstreno">
+                            <span class="btnVer-icono">&#9660;</span> <!-- Flecha hacia abajo -->
+                        </button>
+                    </section>
+
                     <div class="contenedor-filtros" id="contenedor-fechaDeEstreno">
-                        <p>Desde: </p> <input type="date" id="fecha-inicial">
-                        <p>Hasta: </p> <input type="date" id="fecha-limite">
+
+                        <div class="establecer-fecha">
+                            <p>Desde: </p> <input type="date" id="fecha-inicial">
+                        </div>
+                        <div class="establecer-fecha">
+                            <p>Hasta: </p> <input type="date" id="fecha-limite">
+                        </div>
+
                         <button id="buscarPorFecha">Buscar</button>
                     </div>
     
                 </section>
     
-                <section id="seccion-plataformas">
+                <section class="tipo-de-filtro" id="seccion-plataformas">
     
-                    <h3>Plataformas</h3> <button class="btnVer" id="btn-plataformas">Ver</button>
+                    <section class="titulo-boton">
+                        <h3>Plataformas</h3>
+                        <button class="btnVer" id="btn-plataformas">
+                            <span class="btnVer-icono">&#9660;</span> <!-- Flecha hacia abajo -->
+                        </button>
+                    </section>
+
                     <div class="contenedor-filtros" id="contenedor-plataformas">plataformas</div>
     
                 </section>
 
-                <section id="seccion-orden">
+                <section class="tipo-de-filtro" id="seccion-orden">
     
-                    <h3>Orden</h3> <button class="btnVer" id="btn-orden"> Ver </button>
+                    <section class="titulo-boton" >
+                        <h3>Orden</h3>
+                        <button class="btnVer" id="btn-orden">
+                            <span class="btnVer-icono">&#9660;</span> <!-- Flecha hacia abajo -->
+                        </button>
+                    </section>
+
                     <div class="contenedor-filtros" id="contenedor-orden">
                         <li class="tipo-de-orden" id="orden-popularidad-desc" >Popularidad Descendente</li>
                         <li class="tipo-de-orden" id="orden-popularidad-asc" >Popularidad Ascendente</li>
@@ -81,7 +111,7 @@
     
                 </section>
                 
-                <button id="boton-filtros">Aplicar</button>
+                <!-- <button id="boton-filtros">Aplicar</button> -->
     
             </section>
 
