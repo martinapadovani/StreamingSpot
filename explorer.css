@@ -76,15 +76,32 @@ main .busqueda .botonVaciarInput{
 main .filtros {
 
     display: grid;
-    grid-template-rows: 5% 20% 20% 20% 20% 14%;
-    
+    grid-template-rows: 10% 20% 20% 20% 20%;
 
-    margin: 2rem 1rem 10rem; 
+    margin: 2rem 1rem 15rem; 
     padding: 1rem;  
     background-color: #D9D9D9;
 
     border-radius: 1rem;
 
+}
+
+main .filtros .contenedor-filtros {
+
+    /* Establecer una altura mínima y máxima para el contenedor */
+    min-height: 0;
+    max-height: 1rem; /* Establece un valor máximo adecuado */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.contenedor-peliculas-filtros section {
+    overflow: hidden; /* Oculta el contenido excedente */
+    transition: max-height 0.3s ease; /* Agrega una transición suave para expandir o contraer el contenedor */
+}
+
+main .filtros .ver .contenedor-filtros {
+    max-height: 1000px; /* Establece un valor máximo adecuado */
 }
 
 main  .filtros h2,
@@ -93,6 +110,12 @@ main  .filtros h3 {
     margin: 1rem -10rem 1rem 1rem; 
     color: #393d3ce7;
 }
+main  .filtros h2 {
+
+    width: 1rem; /* Establece el ancho de la sección */
+   /* height: 200px; */
+}
+
 
 main  .filtros h3 {
     font-weight: 500;
@@ -125,6 +148,11 @@ main  .filtros .ver{
     transform: translateX(0%);
 
 }
+
+main  .filtros .desplegado {
+    max-height: 200px; /* Establece la altura máxima para adaptar el contenedor */
+    transition: max-height 0.3s ease; /* Agrega una transición suave para expandir o contraer el contenedor */
+  }
 
 /*X genero*/
 

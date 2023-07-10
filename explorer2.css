@@ -1,0 +1,340 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+  
+* { 
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box; 
+} 
+
+main {
+
+    display: flex;
+    flex-direction: column;
+
+    /* display: grid;
+    grid-template-columns: 20% 65% 25%;
+    grid-template-rows: 10% 90%; */
+}
+
+main .contenedor-peliculas-filtros {
+
+    display: flex;
+    justify-content: center;
+    width: 100vmax;
+    
+}
+
+/*BARRA DE BUSQUEDA*/
+
+main .busqueda {
+
+    /* grid-row: 1;
+    grid-column: 3 / 4; */
+
+    justify-content: flex-end;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+
+} 
+
+main .busqueda #inputDeBusqueda,
+main .busqueda #botonBuscar {
+    margin-top: 1rem;
+    background-color: #D9D9D9;
+    border-radius: 1rem;
+    padding: 0.5rem; 
+    border: none;
+
+    cursor: pointer;
+}
+
+main .busqueda .botonVaciarInput{
+    margin-top: 1rem; 
+    background: none;
+    border: none;
+    color: #D9D9D9;
+
+    display: none;
+
+    cursor: pointer;
+}
+
+/*CONTENEDOR PELICULAS*/
+
+main .visualizacion-peliculas {
+
+    /* grid-row: 2;
+    grid-column: 2 / 4; */
+    list-style-type: none;
+    margin: 50px;
+    height: 60%;
+    width: 60%;
+}
+
+main .visualizacion-peliculas .contenedor {
+
+	width: 80%;
+	max-width: max-content;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+main .visualizacion-peliculas  .contenedor .pelicula {
+
+	text-align: center;
+    cursor: pointer;
+}
+
+/* main .visualizacion-peliculas  .contenedor .pelicula .titulo {
+	font-size: 16px;
+	font-weight: 600;
+} */
+
+main .visualizacion-peliculas  .contenedor .pelicula .poster {
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 15px;
+
+
+}
+
+/*NOT FOUND*/
+
+main .contenedor-peliculas-filtros .visualizacion-peliculas #NotFound{
+
+    font-size: 4rem;
+    margin: auto;
+    width: 100%;
+}
+
+/*PAGINACION*/
+
+.paginacion{
+    display: flex;
+    align-items: center;
+}
+
+  ion-icon {
+    font-size: 40px;
+}
+
+.btnAnterior{
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnSiguiente{
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+} 
+
+/*CONTENEDOR FILTROS*/
+
+main .filtros{
+
+    margin: 2rem 1rem 47rem; 
+    padding: 1.5rem;  
+    background-color: #D9D9D9;
+
+    border-radius: 1rem;
+}
+
+/*titlo filtros*/
+
+main  .filtros h2 {
+    color: #2c2f2e;
+    margin: 0rem 5rem 0.5rem; 
+    font-weight: 750;
+    font-size: 1.9rem;
+}
+
+/*items tipos de filtros*/
+
+main  .filtros h3 {
+    color: #393d3ce7;
+    font-weight: 500;
+    margin: 1rem 0rem;
+}
+
+/*BOTON VER + */
+
+main  .filtros .btnVer{
+
+    all: unset;
+    margin: 0.3rem 1rem 0rem ;
+    color: #303433;
+    cursor: pointer;
+} 
+
+main  .filtros .tipo-de-filtro .titulo-boton .btnVer .btnVer-icono {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+main .filtros .tipo-de-filtro .btnVer.activo {
+
+    transform: rotate(180deg); /* Rotar 180 grados para la flecha hacia arriba */
+}
+
+
+/*Contenedor*/
+
+main  .filtros .tipo-de-filtro .contenedor-filtros  {
+
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    /* margin: 1rem; */
+    opacity: 0;
+    transform: translateX(-200%);
+}
+
+main  .filtros .tipo-de-filtro .ver{
+
+    visibility: visible;
+    height: auto;
+    opacity: 1;
+    transition: opacity 1s ease;
+    transform: translateX(0%);
+}
+
+main  .filtros .tipo-de-filtro .titulo-boton{
+
+    display: flex;
+    margin: 0rem 1rem;
+
+}
+
+
+
+
+
+
+/*X genero*/
+
+main .contenedor-peliculas-filtros .filtros #seccion-generos  #contenedor-generos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+main  .filtros .ver .item-genero{
+
+    list-style-type: none;
+    text-align: center;
+    cursor: pointer;
+
+    background-color: #788C85;
+    border-radius: 1rem;
+    padding: 0.3rem ;
+    font-size: 1rem;
+    color: #2c2f2e;
+    font-weight: 500;
+
+}
+
+/* X Fecha de estreno*/
+
+main .contenedor-peliculas-filtros .filtros #seccion-fechaDeEstreno  #contenedor-fechaDeEstreno .establecer-fecha{
+
+    margin: 0.5rem 3rem 0.5rem 0rem;
+    display: flex;
+
+}
+
+main .contenedor-peliculas-filtros .filtros #seccion-fechaDeEstreno  #contenedor-fechaDeEstreno #buscarPorFecha{
+
+    all: unset;
+    cursor: pointer;
+
+    background-color: #788C85;
+    border-radius: 1rem;
+    margin: 0.5rem 0rem 0rem 13rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+
+}
+
+main .contenedor-peliculas-filtros .filtros #seccion-fechaDeEstreno  #contenedor-fechaDeEstreno p{
+
+    color: #393d3ce7;
+    font-weight: 500;
+    margin: AUTO ;
+}
+
+input[type="date"] {
+
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+/* X Plataformas*/
+
+main .contenedor-peliculas-filtros .filtros #seccion-plataformas  #contenedor-plataformas {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin: 0.5rem 2rem 0rem 1rem;
+}
+
+main .contenedor-peliculas-filtros .filtros #seccion-plataformas  #contenedor-plataformas .item-plataforma {
+
+    list-style-type: none;
+    margin: auto;
+}
+  
+main .contenedor-peliculas-filtros .filtros #seccion-plataformas #contenedor-plataformas .item-plataforma .iconoPlataforma {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* X Orden*/
+
+main  .contenedor-peliculas-filtros .filtros #seccion-orden #contenedor-orden {
+    margin: 0rem 0.5rem 0rem 0rem;
+}
+
+main  .contenedor-peliculas-filtros .filtros #seccion-orden #contenedor-orden .tipo-de-orden {
+
+    list-style-type: none;
+
+    cursor: pointer;
+
+    background-color: #788C85;
+    border-radius: 1rem;
+    margin: 0rem 5rem 1rem 1rem;
+    padding: 0.5rem 0.8rem ;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2c2f2e;
+    
+}
