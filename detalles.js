@@ -83,7 +83,7 @@ class MovieCard extends HTMLElement{// Defino una clase MovieCard que hereda la 
                     plataformasHTML += plataformaHTML; 
                 });
             }else{
-                plataformasHTML = ""
+                plataformasHTML = "No se encuentra disponible en ninguna plataforma"
             }
             this.plataforma = plataformasHTML
 
@@ -109,16 +109,17 @@ class MovieCard extends HTMLElement{// Defino una clase MovieCard que hereda la 
             <button class="trailer" > <a target="_blank" href="https://www.youtube.com/embed/${trailerkey}" class="link-trailer">Ver Trailer</a></button>
            
             </div>
-            <div class="descripcion" >
-                <h2> ${this.titulo} (${this.fechaDeEstreno})</h2>
-                <p>${this.descripcion}</p> <br><hr class="linea">
-                <p>Generos: ${this.genero}</p> <br>
-                <hr class="linea">
-                <p>Duracion: ${this.duracion}</p> <br>
-                <hr class="linea">
-                <p>Plataformas disponibles: <br>${this.plataforma}</p> <br>
-                <hr class="linea">
-                <p>Puntaje: ${this.puntuacion}</p>
+            <div class="card" >
+               <div class="contenedor-titulo">  <h2 class="titulo"> ${this.titulo} </h2> <p class="fecha">(${this.fechaDeEstreno})</p> </div>
+                <p class="descripcion">${this.descripcion}</p> 
+
+                <div class="contenedor-detalles"><h6 class="detalles" > Géneros:</h6> <p class="atributos" > ${this.genero}</p></div>
+
+                <div class="contenedor-detalles" ><h6 class="detalles">Duración:</h6> <p class="atributos" > ${this.duracion}</p></div>
+
+                <div class="contenedor-detalles"><h6 class="detalles" >Dónde ver: </h6> <p class="plataforma" >${this.plataforma}</p></div>
+
+                <div class="contenedor-detalles"><h6 class="detalles" >Puntaje: </h6> <p class="atributos" >${this.puntuacion}</p></div></p>
             </div>
             </section>
             `

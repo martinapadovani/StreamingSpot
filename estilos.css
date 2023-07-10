@@ -27,9 +27,9 @@ body{
 /*HEADER*/
 
 header {
-  height: 13vh;
+  height: 8vh;
   padding: 0 10px 0 10px;
-  width: 100vmax;
+  width: 100%;
   background-color: #84CBB1;
   color: #fff;
 }
@@ -40,9 +40,12 @@ header .logo {
 }
 
 header nav {
+  height: 8vh;
+  margin: 0rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center; 
+  
 }
 
 header nav ul {
@@ -58,7 +61,7 @@ header nav ul {
 header nav ul li {
   margin: 5px; 
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 nav ul li a {
@@ -85,6 +88,10 @@ footer{
   background-color: #303433;
   margin-top: auto;
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
 }
 
 footer .footer-nav{

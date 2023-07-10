@@ -14,8 +14,8 @@ usuarioAInscribirse = {
 
 }
 if( !usuarioAInscribirse.email ){
-    alert("Faltan datos por agregar")
+    alert("Datos incompletos!")
 } else{
-    alert("Gracias por dejarnos tu mail! Recibiras informacion exclusiva sobre nuevas peliculas y demas!")
+    alert("Gracias por dejarnos tu mail! Recibiras informacion exclusiva sobre nuestra plataforma.")
 }
 })

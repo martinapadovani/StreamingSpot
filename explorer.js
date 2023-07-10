@@ -212,11 +212,11 @@ function botonVer(boton, contenedor){
 
         console.log("probando")
 
-         // Obtener el contenedor de filtros asociado al botón actual
-        const contenedorFiltros = boton.nextElementSibling;
+        //  // Obtener el contenedor de filtros asociado al botón actual
+        // const contenedorFiltros = boton.nextElementSibling;
     
-         // Alternar la visibilidad del contenedor de filtros
-        contenedorFiltros.style.display = contenedorFiltros.style.display === 'none' ? 'block' : 'none'
+        //  // Alternar la visibilidad del contenedor de filtros
+        // contenedorFiltros.style.display = contenedorFiltros.style.display === 'none' ? 'block' : 'none'
         
         contenedor.classList.toggle("ver")
         contenedor.classList.toggle("desplegado");

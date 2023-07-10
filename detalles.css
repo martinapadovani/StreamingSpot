@@ -19,64 +19,140 @@
 
 
 main movie-card .informacion-pelicula{
+    margin-top: 1rem;
     display: flex;
 }
 
-
 main movie-card .informacion-pelicula .poster{
-	width: 200px;
+	width: 25rem;
     height: auto;
-    margin-top: 30px;
-    margin-left: 80px;
-	margin-bottom: 10px;
-
-	border-radius: 15px;
+    margin: 2.5rem 0rem 0rem 4.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  
+	border-radius: 1rem;
 }
+
 main movie-card .informacion-pelicula .trailer{
-    padding: 10px;
-    margin-left: 80px;
-    width: 200px;
-    border-radius: 15px;
+    padding: 1rem;
+    margin-left: 4.5rem;
+    width: 25rem;
+    border-radius: 1rem;
     border: none;
     color: #303433;
     display: inline;
+
+    margin-top: 1rem;
+    background-color: #303433;
+    border-radius: 1rem;
+    padding: 0.8rem 1.3rem; 
+    border: none;
+
+    color: #fefefe;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  
+    font-weight: 300;
+    font-size: 1.8rem;
 }
-  .link-trailer {
+
+.link-trailer {
     text-decoration: none;
     color: inherit;
-  }
+}
 
-
-main movie-card .informacion-pelicula .descripcion{
-    margin: 30px 20px;
+main movie-card .informacion-pelicula .card{
+    margin-top: 2rem;
+    margin-left: 2rem;
     width: 60%;
 }
-main movie-card .informacion-pelicula .descripcion .linea{
-    color: #303433;
+
+main movie-card .informacion-pelicula .contenedor-titulo {
+    display: flex;
 }
 
+main movie-card .informacion-pelicula .titulo{
+    color: #303433;
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+main movie-card .informacion-pelicula .fecha{
+    margin-left: 1rem;
+    margin-top: 3.5rem;
+    color: #303433;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+
+}
+
+main movie-card .informacion-pelicula .descripcion{
+    margin-top: 0.5rem;
+    margin-left: 0.8rem;
+    color: #303433;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 0rem;
+ 
+}
+main movie-card .informacion-pelicula .contenedor-detalles {
+    display: flex;
+    border-bottom: 0.15rem solid #303433b6;
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+main movie-card .informacion-pelicula .genero{
+    border-top: 0.15rem solid #303433b6 ;
+    color: #303433;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 500;
+}
+  
+main movie-card .informacion-pelicula .detalles{
+    margin: 0rem 0rem 0rem 1rem;
+    color: #303433;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+main movie-card .informacion-pelicula .atributos{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    color: #303433;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+main movie-card .informacion-pelicula .plataforma{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    color: #303433;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+
+}
 
 main movie-card .informacion-pelicula .iconoPlataforma{
 
-    width: 3rem; /* Ancho de la imagen */
-    height: 3rem; /* Altura de la imagen */
+    width: 2.7rem; /* Ancho de la imagen */
+    height: 2.7rem; /* Altura de la imagen */
     border-radius: 10px ;
-    margin: 3px;
-}
-
-main movie-card .informacion-pelicula hr{
-    color: #303433;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  
+    margin: 0.5rem 0rem 0rem 1.5em;  
 }
 
 body {
     position: relative;
     min-height: 100vh;
-  }
+}
   
-  footer {
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-  }
+}
 
 
